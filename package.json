@@ -1,0 +1,14 @@
+{
+  "name": "hello-docker",
+  "version": "1.0.0",
+  "description": "dockerize the js service",
+  "main": "script.js",
+  "scripts": {
+    "test": "npm i"
+  },
+  "author": "Mohamed Kaif",
+  "license": "ISC",
+  "dependencies": {
+    "markdown-preview": "^1.0.1"
+  }
+}
