@@ -21,3 +21,5 @@ Commands:
   - `/` forward slash denotes Where we are. since it is `/`. it means we are root directory. which is the highest directory in the file system.
   - `#` denotes you are a root user, if you are normal user it will be `$`.
   - few commands to execute in shell, `whoami`, `echo Hello World!`, `echo $0`, `history`, `pwd`
+- `nano` -> to install nano use `apt install nano`. It is a text editor runs in the terminal.
+  - command to read the file with nano, `cat file_name` (cat short for concat), `more file_name` for more lines, `less file_name`, `head`, `tail`, `head -n 5 file_name` to list out first 5 lines, `tail -n 5 file_name` to list out last 5 line.
