@@ -25,4 +25,50 @@ Commands:
 
   - command to read the file with nano, `cat file_name` (cat short for concat), `more file_name` for more lines, `less file_name`, `head`, `tail`, `head -n 5 file_name` to list out first 5 lines, `tail -n 5 file_name` to list out last 5 line.
 
-- `Redirection` -
+- `Redirection`
+
+  - `cat file1.txt > file2.txt` to copy the content of the file1 and write it in the file2
+  - `cat file1.txt file2.txt > file3.txt` - copy from multiple files
+  - `echo Hello World > file2.txt` - write single line instead using nano to write.
+
+- `grep` -> Global regular expression print
+
+  - `grep -i search_text file_name.txt`
+  - `grep search_text file_name.txt`
+  - `grep -i -r search_text directory` or `grep -ir search_text directory`
+  - `grep search_text file1.txt file2.txt`
+  - `grep search_text file*`
+
+- Finding files and directories
+
+  - `find -type f -name "file_name"`
+  - `find -type d -name "directory"`
+  - `find /etc -type f -name "file_name"`
+  - `find -type f -iname "File_name"`
+  - `find -type f -iname "file*"`
+
+- Chaining
+
+  - `mkdir dir_name`; `cd dir_name`; `echo done`, this command will be executed sequentially. even the first step fails, the next command will be executed. For example: if the `dir_name` is already exist `mkdir dir_name` will be failed. even the it will not stop to execute it. it will change the directory and print echo "done"
+  - to avoid the above scenario use `mkdir dir_name`; && `cd dir_name`; && `echo done`. if any one of the commands fails, then next after that command will not be executed.
+  - `mkdir dir_name || echo "Failed to create directory` - if mkdir fails to execute then echo will be executed. if mkdir executed, echo will not be executed.
+  - `mkdir dir_name && \`
+    `cd dir_name && \`
+    `echo done`
+    To make it more readable use the chained command like this
+
+- Env
+
+  - to see the env's use `printenv`. there we will see HOSTNAME, which is create created by docker.
+  - to see particular env `printenv ENV_NAME`.
+  - another way to see particular env `echo $ENV_VARIABLE`. $ denotes env.
+  - to add env variable `export ENV_VARIABLE=VALUE`, when adding the env like this it will be added to the env if you use `printenv` you can see the added env. but when you end session and open it again. it will be gone.
+  - at the same time if you go to the home directory `cd ~`. you will see the .bashrc file. if you add the env here. when you end the session and come there again it will still have the added env.
+  - but here is the catch, storing the env in the .bashrc file is not secure. because everyone will be having the access to the .bashrc. because it is in the home directory `~`
+  - when you added new env to the .bashrc. try to see it. it will not be there. because the .bashrc will be executed by linux when it is being started. there are two way to see your added variable. end the session and open it again or use `source .bashrc` or if you are not in home directory `source ~/.bashrc` will execute the .bashrc file then you can see the newly added env.
+
+- `control+r` - to search for the file
+- To learn
+  System -D()
+  file system of linux
+  bash
